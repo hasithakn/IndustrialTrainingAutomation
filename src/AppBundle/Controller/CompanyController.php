@@ -40,7 +40,7 @@ class CompanyController extends Controller
             $form->getData();
             $company = $form->getData();
 
-            // ... perform some action, such as saving the task to the database
+            // ..ljh. perform some action, such as saving the task to the database
             // for example, if Task is a Doctrine entity, save it!
             $em = $this->getDoctrine()->getManager();
             $em->persist($company);
