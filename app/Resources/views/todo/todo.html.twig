@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            {#<th>Address</th>#}
+            {#<th>Age</th>#}
+            {#<th>Email</th>#}
+            {#<th>Gender</th>#}
+            {#<th>GPA</th>#}
+            {#<th>Mobile</th>#}
+
+        </tr>
+        </thead>
+        <tbody>
+    {% for trainee in trainees %}
+        <tr>
+            <th scope="row">{{ trainee.id }}</th>
+            <td>{{ trainee.name }}</td>
+            {#<td>{{ test2.address }}</td>#}
+            {#<td>{{ test2.age }}</td>#}
+            {#<td>{{ test2.email }}</td>#}
+            {#<td>{{ test2.gender }}</td>#}
+            {#<td>{{ test2.gpa }}</td>#}
+            {#<td>{{ test2.mobile }}</td>#}
+            <td>
+                <a href="{{ url('todo_view',{id: trainee.id }) }}" class="btn btn-success">View</a>
+                <a href="{{ url('todo_edit',{id: trainee.id }) }}" class="btn btn-danger">Edit</a>
+                <a href="{{ url('todo_delete',{id: trainee.id }) }}" class="btn btn-danger">Delete</a>
+            </td>
+        </tr>
+    {% endfor %}
+        {#<td><a href="todo/view/1" class="btn btn-success">View</a> </td>#}
+        </tbody>
+    </table>
+
+{% endblock %}

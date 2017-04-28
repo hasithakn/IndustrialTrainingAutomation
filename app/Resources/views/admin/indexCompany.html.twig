@@ -1,0 +1,41 @@
+{% extends 'admin.html.twig' %}
+
+{% block body %}
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Company</th>
+            <th>No of Trainees</th>
+            {#<th>Age</th>#}
+            {#<th>Email</th>#}
+            {#<th>Gender</th>#}
+            {#<th>GPA</th>#}
+            {#<th>Mobile</th>#}
+
+        </tr>
+        </thead>
+        <tbody>
+        {% for comp in company%}
+            <tr>
+                <th scope="row">{{ comp.id }}</th>
+                <td>{{ comp.name }}</td>
+                <td>{{ comp.noOfTrainees }}</td>
+                {#<td>{{ test2.age }}</td>#}
+                {#<td>{{ test2.email }}</td>#}
+                {#<td>{{ test2.gender }}</td>#}
+                {#<td>{{ test2.gpa }}</td>#}
+                {#<td>{{ test2.mobile }}</td>#}
+                <td>
+                    <a href="{{ url('company_view',{id: comp.id }) }}" class="btn btn-success">View</a>
+                    <a href="{{ url('admin_company_viewAppliedTrainees',{id: comp.id }) }}" class="btn btn-success">Applied Trainees</a>
+                    <a href="{{ url('company_edit',{id: comp.id }) }}" class="btn btn-danger">Edit</a>
+                    <a href="{{ url('company_delete',{id: comp.id }) }}" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        {% endfor %}
+        {#<td><a href="todo/view/1" class="btn btn-success">View</a> </td>#}
+        </tbody>
+    </table>
+
+{% endblock %}

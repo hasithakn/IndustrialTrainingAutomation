@@ -1,0 +1,103 @@
+{% extends 'admin.html.twig' %}
+
+{% block body %}
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <h2>Company : {{ company.name }} | Vacancies : {{ company.noOfTrainees }} Trainees</h2>
+        </tr>
+
+        </thead>
+        <tbody>
+        <tr>
+            <h2>GPA List</h2>
+        </tr>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Mobile</th>
+            <th>GPA</th>
+            <th>Luck No</th>
+        </tr>
+        {% for trainee in traineeList %}
+            {#{{ trainee.selectedCompany }}#}
+            {#{{ company.id }}#}
+            {#...#}
+            {% if trainee.selectedCompany is not null and trainee.selectedCompany.id==company.id %}
+                <tr style="background-color:lightgreen">
+                    <th scope="row">{{ trainee.id }}</th>
+                    <td>{{ trainee.name }}</td>
+                    <td>{{ trainee.mobile }}</td>
+                    <td>{{ trainee.gpa }}</td>
+                    <td>{{ trainee.luckNo }}</td>
+                    <td>
+                        <a href="{{ url('todo_view',{id: trainee.id }) }}" class="btn btn-success">View</a>
+                        <a href="{{ url('todo_edit',{id: trainee.id }) }}" class="btn btn-danger">Edit</a>
+                        <a href="{{ url('todo_delete',{id: trainee.id }) }}" class="btn btn-danger">Delete</a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <th scope="row">{{ trainee.id }}</th>
+                    <td>{{ trainee.name }}</td>
+                    <td>{{ trainee.mobile }}</td>
+                    <td>{{ trainee.gpa }}</td>
+                    <td>{{ trainee.luckNo }}</td>
+                    <td>
+                        <a href="{{ url('todo_view',{id: trainee.id }) }}" class="btn btn-success">View</a>
+                        <a href="{{ url('todo_edit',{id: trainee.id }) }}" class="btn btn-danger">Edit</a>
+                        <a href="{{ url('todo_delete',{id: trainee.id }) }}" class="btn btn-danger">Delete</a>
+                    </td>
+                </tr>
+            {% endif %}
+
+        {% endfor %}
+        <tr>
+            <th>
+                <h2>Luck List</h2>
+            </th>
+        </tr>
+
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Mobile</th>
+            <th>GPA</th>
+            <th>Luck No</th>
+        </tr>
+        {% for trainee in luckList %}
+            {% if trainee.selectedCompany is not null and trainee.selectedCompany.id==company.id %}
+                <tr style="background-color:lightgreen">
+                    <th scope="row">{{ trainee.id }}</th>
+                    <td>{{ trainee.name }}</td>
+                    <td>{{ trainee.mobile }}</td>
+                    <td>{{ trainee.gpa }}</td>
+                    <td>{{ trainee.luckNo }}</td>
+                    <td>
+                        <a href="{{ url('todo_view',{id: trainee.id }) }}" class="btn btn-success">View</a>
+                        <a href="{{ url('todo_edit',{id: trainee.id }) }}" class="btn btn-danger">Edit</a>
+                        <a href="{{ url('todo_delete',{id: trainee.id }) }}" class="btn btn-danger">Delete</a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <th scope="row">{{ trainee.id }}</th>
+                    <td>{{ trainee.name }}</td>
+                    <td>{{ trainee.mobile }}</td>
+                    <td>{{ trainee.gpa }}</td>
+                    <td>{{ trainee.luckNo }}</td>
+                    <td>
+                        <a href="{{ url('todo_view',{id: trainee.id }) }}" class="btn btn-success">View</a>
+                        <a href="{{ url('todo_edit',{id: trainee.id }) }}" class="btn btn-danger">Edit</a>
+                        <a href="{{ url('todo_delete',{id: trainee.id }) }}" class="btn btn-danger">Delete</a>
+                    </td>
+                </tr>
+            {% endif %}
+        {% endfor %}
+
+        {#<td><a href="todo/view/1" class="btn btn-success">View</a> </td>#}
+        </tbody>
+    </table>
+    <a href="{{ url('autoSelect',{id: company.id }) }}" class="btn btn-success">Auto Select Trainees</a>
+
+{% endblock %}

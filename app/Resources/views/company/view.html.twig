@@ -1,0 +1,56 @@
+{% extends 'company.html.twig' %}
+
+{% block body %}
+    <h1>Company Profile</h1>
+    <tr></tr>
+    <table class="table table-bordered">
+        <thead>
+
+        </thead>
+        <tbody>
+
+        <tr>
+            <td>ID</td>
+            <th scope="row">{{ company.id }}</th>
+            {#<td>{{ test2.name }}</td>#}
+            {#<td>{{ test2.address }}</td>#}
+            {#<td>{{ test2.age }}</td>#}
+            {#<td>{{ test2.email }}</td>#}
+            {#<td>{{ test2.gender }}</td>#}
+            {#<td>{{ test2.gpa }}</td>#}
+            {#<td>{{ test2.mobile }}</td>#}
+            {#<td>#}
+            {#<a href="{{ url('todo_view',{id: test2.id }) }}" class="btn btn-success">View</a>#}
+            {#<a href="{{ url('todo_edit',{id: test2.id }) }}" class="btn btn-danger">Edit</a>#}
+            {#</td>#}
+        </tr>
+        <tr>
+            <td>Name</td>
+            <th scope="row">{{ company.name }}</th>
+        </tr>
+        <tr>
+            <td>No of Trainees</td>
+            <th scope="row">{{ company.noOfTrainees }}</th>
+        </tr>
+
+        <tr>
+            <td>Address</td>
+            <th scope="row">{{ company.address }}</th>
+        </tr>
+        <tr>
+            <td>Email</td>
+            <th scope="row">{{ company.email}}</th>
+        </tr>
+        <tr>
+            <td>Contact</td>
+            <th scope="row">{{ company.contactNo}}</th>
+        </tr>
+        <tr>
+            <td>Description</td>
+            <th scope="row">{{ company.discription}}</th>
+        </tr>
+        <td><a href="{{ url('company_edit',{id: company.id}) }}" class="btn btn-success">Edit</a> </td>
+        </tbody>
+    </table>
+
+{% endblock %}

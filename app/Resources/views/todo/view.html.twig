@@ -1,0 +1,76 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>User Profile</h1>
+    <tr></tr>
+    <table class="table table-bordered">
+        <thead>
+
+        </thead>
+        <tbody>
+
+            <tr>
+                <td>ID</td>
+                <th scope="row">{{ trainees.id }}</th>
+                {#<td>{{ test2.name }}</td>#}
+                {#<td>{{ test2.address }}</td>#}
+                {#<td>{{ test2.age }}</td>#}
+                {#<td>{{ test2.email }}</td>#}
+                {#<td>{{ test2.gender }}</td>#}
+                {#<td>{{ test2.gpa }}</td>#}
+                {#<td>{{ test2.mobile }}</td>#}
+                {#<td>#}
+                {#<a href="{{ url('todo_view',{id: test2.id }) }}" class="btn btn-success">View</a>#}
+                {#<a href="{{ url('todo_edit',{id: test2.id }) }}" class="btn btn-danger">Edit</a>#}
+                {#</td>#}
+            </tr>
+            <tr>
+                <td>Name</td>
+                <th scope="row">{{ trainees.name }}</th>
+            </tr>
+            <tr>
+                <td>Address</td>
+                <th scope="row">{{ trainees.address }}</th>
+            </tr>
+
+            <tr>
+                <td>Age</td>
+                <th scope="row">{{ trainees.age }}</th>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <th scope="row">{{ trainees.email}}</th>
+            </tr>
+            <tr>
+                <td>Gender</td>
+                <th scope="row">{{ trainees.gender}}</th>
+            </tr>
+            <tr>
+                <td>GPA</td>
+                <th scope="row">{{ trainees.gpa}}</th>
+            </tr>
+            <tr>
+                <td>Luck No</td>
+                <th scope="row">{{ trainees.luckNo}}</th>
+            </tr>
+            <tr>
+                <td>Mobile</td>
+                <th scope="row">{{ trainees.mobile }}</th>
+            </tr>
+            <tr>
+                <td>GPA Company</td>
+                <th scope="row">{{ trainees.gpaCompany }}</th>
+            </tr>
+            <tr>
+                <td>Luck List Company</td>
+                <th scope="row">{{ trainees.luckListCompany }}</th>
+            </tr>
+            <tr>
+                <td>Selected Company</td>
+                <th scope="row">{{ trainees.selectedCompany }}</th>
+            </tr>
+        <td><a href="{{ url('todo_edit',{id: trainees.id}) }}" class="btn btn-success">Edit</a> </td>
+        </tbody>
+    </table>
+
+{% endblock %}
